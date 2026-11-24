@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """Write one original dad joke to /output/entry.txt."""
 
-import os
+from pathlib import Path
 
-JOKE = "I broke up with my guitar. Too many strings attached."
+JOKE = "I told my boat a joke. It didn't laugh — it just gave me a stern look."
 
 
 def main() -> None:
-    os.makedirs("/output", exist_ok=True)
-    with open("/output/entry.txt", "w", encoding="utf-8") as f:
-        f.write(JOKE + "\n")
+    out = Path("/output/entry.txt")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(JOKE + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
