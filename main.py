@@ -3,7 +3,7 @@
 
 import os
 
-JOKE = "I told my trumpet a secret, but it just blew it."
+JOKE = "I broke up with my guitar. Too many strings attached."
 
 
 def main() -> None:
