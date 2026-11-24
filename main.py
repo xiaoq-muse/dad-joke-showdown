@@ -3,7 +3,7 @@
 
 import os
 
-JOKE = "My cat just knocked my coffee off the table. It was a total cat-astrophe."
+JOKE = "I had a fight with the Wi-Fi, but we're working on our connection."
 
 
 def main() -> None:
