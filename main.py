@@ -3,7 +3,7 @@
 
 import os
 
-JOKE = "My chili recipe is top secret. Even the beans won't spill."
+JOKE = "My cat just knocked my coffee off the table. It was a total cat-astrophe."
 
 
 def main() -> None:
