@@ -3,7 +3,7 @@
 
 import os
 
-JOKE = "I bought a boat because it was on sail."
+JOKE = "My chili recipe is top secret. Even the beans won't spill."
 
 
 def main() -> None:
