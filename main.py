@@ -1,34 +1,37 @@
-"""Write a dad joke about an elevator to the entry file."""
+"""Write the dad joke entry to /output/entry.txt."""
 
-# The joke for the Dad Joke Showdown entry.
-JOKE = "I told the elevator a joke. It really lifted my spirits."
+# The entry: one original dad joke, used verbatim everywhere.
+JOKE = "I opened a bakery that only sells jokes. Business is really on a roll."
 
 
 def validate_joke(joke):
-    """Check the joke is non-empty and no longer than 200 characters."""
+    """Check the joke is non-empty and within the 200-character limit."""
     if not joke:
         raise ValueError("joke must not be empty")
     if len(joke) > 200:
-        raise ValueError(f"joke must be at most 200 characters, got {len(joke)}")
+        raise ValueError(
+            f"joke is {len(joke)} characters, over the 200-character limit"
+        )
     return True
 
 
 def write_joke(path="/output/entry.txt"):
-    """Write JOKE plus a trailing newline to path; return the path written."""
+    """Write JOKE plus a trailing newline to path; return the path."""
     import os
 
-    # Make sure the output directory exists before writing.
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(JOKE + "\n")
+    directory = os.path.dirname(path)
+    if directory:
+        os.makedirs(directory, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as handle:
+        handle.write(JOKE + "\n")
     return path
 
 
 def main():
-    """Validate the joke, write it out, and print a confirmation."""
+    """Validate the joke, write it out, and confirm where it went."""
     validate_joke(JOKE)
     path = write_joke()
-    print(f"Wrote joke to {path}")
+    print(f"Wrote {len(JOKE)}-character joke to {path}: {JOKE}")
 
 
 if __name__ == "__main__":
